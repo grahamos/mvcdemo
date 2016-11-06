@@ -12,15 +12,15 @@ Handling all errors that might occur during the execution of the action method.*
 class Index extends Controller {
 	
 	function __construct() {
-		parent::__construct();
+		parent::__construct();									 
 	}
 	
-	public function index() {
+	public function index() {									 // Index method
 		echo 'INDEX INDEX INDEX';	
-		$this->view->render('Index/index');  					 // Will require header & footer unless different instruction
+		$this->view->render('Index/index');  					 // Renders text from views/Index/Index.php
 	}
 	
 	public function details() {
-		echo $this->view->render('Index/index');
+		echo $this->view->render('Index/index');					// Renders text from views/Index/index.php
 	}
 }

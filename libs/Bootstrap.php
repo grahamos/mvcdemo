@@ -15,12 +15,12 @@ class Bootstrap {
 			return false; 											// Prevents code below running
 		}
 		
-		$file = 'controllers/' . $url[0] . '.php';
+		$file = 'controllers/' . $url[0] . '.php';					
 		if(file_exists($file)) {
 			require $file;
 		} else {
-			require 'controllers/error.php';
-			$controller = new Error();
+			require 'controllers/error.php';							// Get error.php file from controllers
+			$controller = new Error();								// New instance will render msg from errors/index.php
 		}
 		
 		$controller = new $url[0];

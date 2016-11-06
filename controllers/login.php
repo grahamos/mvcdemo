@@ -16,6 +16,6 @@ class Login extends Controller {
 		}
 		
 		public function index() {	
-		$this->view->render('Login/index');  					 // Will require header & footer unless different instruction
+		$this->view->render('Login/index');  					 // // Renders text from views/Login/index.php
 	}
 }

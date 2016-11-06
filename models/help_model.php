@@ -1,3 +1,5 @@
+<!--A model is an object representing data or even activity, e.g. a database table or even some plant-floor production-machine process.-->
+
 <?php
 
 class Help_Model extends Model {

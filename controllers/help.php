@@ -15,13 +15,13 @@ class Help extends Controller {
 	}
 	
 	public function index() {									// Custom controller so constuctor bypasses page call 
-		$this->view->render('help/index');
+		$this->view->render('help/index');						// Renders the text from Views/Help index file
 	}
 	
 	public function other($arg = false) {
 		
 		require 'models/help_model.php';
-		$model = new Help_Model();
+		$model = new Help_Model();								 // New help_model instance
 		$this->view->blah = $model->blah();						// Calling blah() in help_model
 	}
 }
