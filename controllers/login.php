@@ -9,18 +9,13 @@ Locating the appropriate action method to call and validating that it can be cal
 Getting the values to use as the action method's arguments.
 Handling all errors that might occur during the execution of the action method.*/
 
-class Index extends Controller {
+class Login extends Controller {
 	
 	function __construct() {
 		parent::__construct();
-	}
-	
-	public function index() {
-		echo 'INDEX INDEX INDEX';	
-		$this->view->render('Index/index');  					 // Will require header & footer unless different instruction
-	}
-	
-	public function details() {
-		echo $this->view->render('Index/index');
+		}
+		
+		public function index() {	
+		$this->view->render('Login/index');  					 // Will require header & footer unless different instruction
 	}
 }
