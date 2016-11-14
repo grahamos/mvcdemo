@@ -1,21 +1,18 @@
-/* CSS Document */
 body {
-	background-color: silver;
+	background: silver;
 }
 
 #header {
 	padding: 20px;
-	background-color: gold;
+	background: gold;
 }
 
 #content {
-	background-color: white;
+	background: #fff;
 	padding: 20px;
-	
 }
 
 #footer {
-	background-color: green;
+	background: green;
 	padding: 20px;
 }
-

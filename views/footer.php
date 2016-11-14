@@ -1,6 +1,6 @@
 </div>
 
-<div id = "footer">
+<div id="footer">
 	(C) Footer
 </div>
 
