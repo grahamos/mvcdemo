@@ -11,6 +11,7 @@ class Dashboard extends Controller {
 			header('location: ../login');
 			exit;
 		}
+		print_r($_SESSION);
 	
 		$this->view->js = array('dashboard/js/default.js');
 		
@@ -18,13 +19,13 @@ class Dashboard extends Controller {
 	
 	function index() 
 	{	
-		$this->view->render('dashboard/index');
+		$this->view->render('dashboard/index'); 
 	}
 	
 	function logout()
 	{
 		Session::destroy();
-		header('location: ../login');
+		header('location: ' . URL . 'login'); // This contstance URL is set in config/paths
 		exit;
 	}
 	

@@ -22,10 +22,18 @@
 <div id="header">
 	header
 	<br />
-	<a href="<?php echo URL; ?>index">Index</a>
+	<?php if (Session::get('loggedIn') == false):?>  <!-- If not logged in -->
+	<a href="<?php echo URL; ?>index">Index</a>		<!--show only these navs-->
 	<a href="<?php echo URL; ?>help">Help</a>
+	<?php endif; ?>
 	<?php if (Session::get('loggedIn') == true):?>
-		<a href="<?php echo URL; ?>dashboard/logout">Logout</a>	
+		<a href="<?php echo URL; ?>dashboard">Dashboard</a>	<!-- nav links -->
+
+	<?php if (Session::get('role') == 'owner'):?>
+		<a href="<?php echo URL; ?>user">Users</a>	<!-- nav links -->
+		<?php endif; ?>
+
+		<a href="<?php echo URL; ?>dashboard/logout">Logout</a><!--  nav links -->	
 	<?php else: ?>
 		<a href="<?php echo URL; ?>login">Login</a>
 	<?php endif; ?>

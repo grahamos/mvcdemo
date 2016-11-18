@@ -7,8 +7,8 @@ class Login extends Controller {
 	}
 	
 	function index() 
-	{	
-		$this->view->render('login/index');
+	{	// Renders the Submit, username, and password boxes from login/index in the views
+		$this->view->render('login/index'); 
 	}
 	
 	function run()
