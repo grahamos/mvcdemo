@@ -7,8 +7,9 @@ class Index extends Controller {
 	}
 	
 	function index() {
-		//echo 'INSIDE INDEX INDEX'; 			*TESTER*
-		$this->view->render('index/index'); // Renders text from the index/index in Views
+		//echo Hash::create('sha256', 'jesse', HASH_PASSWORD_KEY);
+		//echo Hash::create('sha256', 'joe', HASH_PASSWORD_KEY);
+		$this->view->render('index/index');
 	}
 	
 	function details() {

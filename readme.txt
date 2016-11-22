@@ -1,1 +1,0 @@
-I’m learning MVC with JREAM on you tube. This files are for working along with course.

@@ -8,19 +8,15 @@ class Login_Model extends Model
 	}
 
 	public function run()
-	{
-		$sth = $this->db->prepare("SELECT id, role FROM users WHERE 
-				login = :login AND password = :password");
+	{	
+		$sth = $this->db->prepare("SELECT id, role FROM user WHERE 
+				login = :login AND password = (:password)");
 		$sth->execute(array(
 			':login' => $_POST['login'],
-			':password' => HASH::create('md5', $_POST['password'], HASH_PASSWORD_KEY)
-			 
+			':password' => Hash::create('sha256',  $_POST['password'], HASH_PASSWORD_KEY)
 		));
-
-		$data = $sth->fetch();
-	
 		
-		//$data = $sth->fetchAll();
+		$data = $sth->fetch();
 		
 		$count =  $sth->rowCount();
 		if ($count > 0) {

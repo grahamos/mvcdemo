@@ -3,8 +3,12 @@
 <head>
 	<title>Test</title>
 	<link rel="stylesheet" href="<?php echo URL; ?>public/css/default.css" />
-	<script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="<?php echo URL; ?>public/js/custom.js"></script>
+
+
 	<?php
 		if (isset($this->js)) 
 		{
@@ -14,26 +18,26 @@
 			}
 		}
 	?>
+
 </head>
 <body>
 
 <?php Session::init(); ?>
 	
 <div id="header">
-	header
-	<br />
-	<?php if (Session::get('loggedIn') == false):?>  <!-- If not logged in -->
-	<a href="<?php echo URL; ?>index">Index</a>		<!--show only these navs-->
-	<a href="<?php echo URL; ?>help">Help</a>
-	<?php endif; ?>
+
+	<?php if (Session::get('loggedIn') == false):?>
+		<a href="<?php echo URL; ?>index">Index</a>
+		<a href="<?php echo URL; ?>help">Help</a>
+	<?php endif; ?>	
 	<?php if (Session::get('loggedIn') == true):?>
-		<a href="<?php echo URL; ?>dashboard">Dashboard</a>	<!-- nav links -->
-
-	<?php if (Session::get('role') == 'owner'):?>
-		<a href="<?php echo URL; ?>user">Users</a>	<!-- nav links -->
+		<a href="<?php echo URL; ?>dashboard">Dashboard</a>
+		
+		<?php if (Session::get('role') == 'owner'):?>
+		<a href="<?php echo URL; ?>user">Users</a>
 		<?php endif; ?>
-
-		<a href="<?php echo URL; ?>dashboard/logout">Logout</a><!--  nav links -->	
+		
+		<a href="<?php echo URL; ?>dashboard/logout">Logout</a>	
 	<?php else: ?>
 		<a href="<?php echo URL; ?>login">Login</a>
 	<?php endif; ?>

@@ -1,5 +1,5 @@
 $(function() {
-	"use strict";
+	
 	$.get('dashboard/xhrGetListings', function(o) {
 		
 		for (var i = 0; i < o.length; i++)
@@ -11,7 +11,7 @@ $(function() {
 			delItem = $(this);
 			var id = $(this).attr('rel');
 			
-			$.post('dashboard/xhrDeleteListing', {'id': id}, function() {
+			$.post('dashboard/xhrDeleteListing', {'id': id}, function(o) {
 				delItem.parent().remove();
 			}, 'json');
 			

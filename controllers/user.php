@@ -16,13 +16,14 @@ class User extends Controller {
 			
 	}
 	
-	public function index() 
+		public function index() 
 	{	
-		$this->view->userList = $this->model->userList(); //function userlist is user_model
-		$this->view->render('user/index'); // Renders the user/index in views
+		$this->view->userList = $this->model->userList();
+		$this->view->render('user/index');
 	}
+	
 
-	public function create() 
+		public function create() 
 	{
 		$data = array();
 		$data['login'] = $_POST['login'];
@@ -32,16 +33,16 @@ class User extends Controller {
 		// @TODO: Do your error checking!
 		
 		$this->model->create($data);
-		header('location: ' . URL . 'user');
+		header('location: ' . URL . 'user');	
 	}
 
-	public function edit($id) 
+		public function edit($id) 
 	{
 		$this->view->user = $this->model->userSingleList($id);
 		$this->view->render('user/edit');
 	}
 
-	public function editSave($id)
+		public function editSave($id)
 	{
 		$data = array();
 		$data['id'] = $id;
@@ -55,12 +56,10 @@ class User extends Controller {
 		header('location: ' . URL . 'user');
 	}
 
-	public function delete($id) 
+		public function delete($id)
 	{
 		$this->model->delete($id);
-		header('location: ' . URL . 'user'); // Refreshes page
+		header('location: ' . URL . 'user');
 	}
 	
-	
-
 }
